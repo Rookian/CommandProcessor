@@ -6,7 +6,7 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{6B95F306-3185-4BBA-84BE-540FB53A2122}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CommandProcessor</RootNamespace>
     <AssemblyName>CommandProcessor</AssemblyName>
@@ -27,49 +27,15 @@
     <OutputPath>bin\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="StructureMap, Version=2.6.2.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
-      <HintPath>..\packages\structuremap.2.6.2\lib\StructureMap.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandHandlers\NotificationCommandHandler.cs" />
-    <Compile Include="CommandHandlers\CreateEmployeeCommandHandler.cs" />
-    <Compile Include="CommandHandlers\EnumerationHandler.cs" />
-    <Compile Include="CommandMessages\NotificationCommand.cs" />
-    <Compile Include="CommandProcessor\ICommandMessageHandlerFactory.cs" />
-    <Compile Include="CommandProcessor\IMessageProcessor.cs" />
-    <Compile Include="DomainModels\INotifier.cs" />
-    <Compile Include="Processes\CreateProcess.cs" />
-    <Compile Include="Processes\DeleteProcess.cs" />
-    <Compile Include="Processes\IProcess.cs" />
-    <Compile Include="CommandHandlers\UpdateEmployeeCommandHandler.cs" />
-    <Compile Include="CommandMessages\EnumerationCommand.cs" />
-    <Compile Include="CommandMessages\Database.cs" />
-    <Compile Include="CommandMessages\UpdateEmployeeCommandMessage.cs" />
-    <Compile Include="CommandProcessor\CommandMessageHandlerFactory.cs" />
-    <Compile Include="CommandProcessor\CommandMessageHandlerProxy.cs" />
-    <Compile Include="CommandProcessor\ICommandHandler.cs" />
-    <Compile Include="CommandProcessor\ICommandMessageHandler.cs" />
-    <Compile Include="CommandProcessor\MessageProcessor.cs" />
-    <Compile Include="DataTransferObjects\EmployeeDTO.cs" />
-    <Compile Include="DomainModels\Employee.cs" />
-    <Compile Include="IoC\BootsTrapper.cs" />
-    <Compile Include="IoC\DependencyRegistry.cs" />
-    <Compile Include="Processes\ReadProcess.cs" />
-    <Compile Include="Processes\UpdateProcess.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="ICommandMessage.cs" />
+    <Compile Include="ICommandProcessor.cs" />
+    <Compile Include="ICommandHandler.cs" />
+    <Compile Include="CommandProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

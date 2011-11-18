@@ -1,10 +1,10 @@
-﻿namespace CommandProcessor.CommandMessages
+﻿namespace CommandProcessor.Sample.CommandMessages
 {
     public enum Database
     {
         Create,
         Read,
         Update,
-        Delelte,
+        Delete,
     }
 }

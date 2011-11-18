@@ -1,4 +1,4 @@
-﻿namespace CommandProcessor.Processes
+﻿namespace CommandProcessor.Sample.Processes
 {
     public interface IProcess<in T> : IProcess
     {

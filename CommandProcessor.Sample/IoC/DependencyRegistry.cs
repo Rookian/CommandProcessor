@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using CommandProcessor.Sample.CommandHandlers;
 using CommandProcessor.Sample.CommandMessages;
 using CommandProcessor.Sample.Processes;
 using StructureMap;
@@ -25,8 +27,9 @@ namespace CommandProcessor.Sample.IoC
             For<Func<string, IProcess<EnumerationCommandMessage<Database>>>>()
                 .Use(ObjectFactory.GetNamedInstance<IProcess<EnumerationCommandMessage<Database>>>);
 
-            For<Func<Type, IEnumerable<ICommandHandler<ICommandMessage>>>>()
-                .Use(type => ObjectFactory.GetAllInstances(type).Cast<ICommandHandler<ICommandMessage>>());
+            For<IRepository>().Use<Repository>();
+
+            For<Func<Type, IEnumerable<ICommandHandler>>>().Use(type => ObjectFactory.GetAllInstances(type).Cast<ICommandHandler>());
         }
 
         private static Func<Type, string> ProcessNamingConvention()

@@ -1,25 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CommandProcessor
 {
     public class CommandProcessor : ICommandProcessor
     {
-        private readonly Func<Type, IEnumerable<ICommandHandler<ICommandMessage>>> _commandHandlerDelegate;
+        private readonly Func<Type, IEnumerable<ICommandHandler>> _commandHandlerFactory;
 
-        public CommandProcessor(Func<Type, IEnumerable<ICommandHandler<ICommandMessage>>> commandHandlerDelegate)
+        public CommandProcessor(Func<Type, IEnumerable<ICommandHandler>> commandHandlerFactory)
         {
-            _commandHandlerDelegate = commandHandlerDelegate;
+            _commandHandlerFactory = commandHandlerFactory;
         }
 
         public void Process<TCommandMessage>(TCommandMessage commandMessage) where TCommandMessage : ICommandMessage
         {
             var commandHandlerType = typeof (ICommandHandler<>).MakeGenericType(typeof (TCommandMessage));
-            var commandHandlers = _commandHandlerDelegate(commandHandlerType);
+            var commandHandlers = _commandHandlerFactory(commandHandlerType).Cast<ICommandHandler<TCommandMessage>>();
 
             foreach (var commandHandler in commandHandlers)
             {
-                commandHandler.Execute(commandMessage);   
+                commandHandler.Execute(commandMessage);
             }
         }
     }

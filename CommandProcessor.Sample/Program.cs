@@ -13,7 +13,7 @@ namespace CommandProcessor.Sample
             new BootsTrapper().BootsTrap();
 
             Console.WriteLine("Switch");
-            BigBallOfMud();
+            //BigBallOfMud();
 
             Console.WriteLine("MessageBased");
             MessageBasedInvocation();

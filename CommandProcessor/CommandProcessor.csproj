@@ -35,7 +35,9 @@
     <Compile Include="ICommandProcessor.cs" />
     <Compile Include="ICommandHandler.cs" />
     <Compile Include="CommandProcessor.cs" />
+    <Compile Include="IUndoCommandProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UndoCommandProcessor.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

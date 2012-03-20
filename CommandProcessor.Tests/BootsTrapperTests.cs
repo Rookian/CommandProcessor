@@ -13,7 +13,6 @@ namespace CommandProcessor.Tests
 
         Because of = () => _messageProcessor = ObjectFactory.GetInstance<ICommandProcessor>();
 
-        It should_retrieve_message_processor = () => _messageProcessor.ShouldBeOfType(typeof(CommandProcessor));
+        It should_retrieve_message_processor = () => _messageProcessor.ShouldBeOfType<CommandProcessor>();
     }
-
 }

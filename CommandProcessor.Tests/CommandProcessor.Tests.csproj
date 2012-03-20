@@ -39,7 +39,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="StructureMap">
-      <HintPath>..\packages\structuremap.2.6.2\lib\StructureMap.dll</HintPath>
+      <HintPath>..\..\Lib\structuremap.2.6.3\lib\StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,6 +52,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CommandProcessor.Sample\CommandProcessor.Sample.csproj">
+      <Project>{D649BB1C-CC10-4C1A-97C2-4ED17BB9F3EC}</Project>
+      <Name>CommandProcessor.Sample</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CommandProcessor\CommandProcessor.csproj">
       <Project>{6B95F306-3185-4BBA-84BE-540FB53A2122}</Project>
       <Name>CommandProcessor</Name>

@@ -1,6 +1,6 @@
 ﻿namespace CommandProcessor
 {
-    public interface ICommandHandler<in TCommand> : ICommandHandler where TCommand : ICommandMessage 
+    public interface ICommandHandler<in TCommand> : ICommandHandler
     {
         void Execute(TCommand commandMessage);
     }

@@ -13,7 +13,7 @@ namespace CommandProcessor
             _commandHandlerFactory = commandHandlerFactory;
         }
 
-        public void Process<TCommandMessage>(TCommandMessage commandMessage) where TCommandMessage : ICommandMessage
+        public void Process<TCommandMessage>(TCommandMessage commandMessage) 
         {
             var commandHandlerType = typeof (ICommandHandler<>).MakeGenericType(typeof (TCommandMessage));
             var commandHandlers = _commandHandlerFactory(commandHandlerType).Cast<ICommandHandler<TCommandMessage>>();

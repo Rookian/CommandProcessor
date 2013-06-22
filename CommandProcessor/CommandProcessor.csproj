@@ -31,7 +31,6 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ICommandMessage.cs" />
     <Compile Include="ICommandProcessor.cs" />
     <Compile Include="ICommandHandler.cs" />
     <Compile Include="CommandProcessor.cs" />
